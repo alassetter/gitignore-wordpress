@@ -1,0 +1,238 @@
+# -----------------------------------------------------------------
+# .gitignore for WordPress
+# ver 20180904
+#
+# By default all files are ignored.  You'll need to whitelist
+# any mu-plugins, plugins, or themes you want to include in the repo.
+#
+# To ignore uncommitted changes in a file that is already tracked, use
+# git update-index --assume-unchanged
+#
+# To stop tracking a file that is currently tracked, use
+# git rm --cached
+#
+# Change Log:
+# 20180904
+# -----------------------------------------------------------------
+
+
+# ignore everything in the root except the "app" directory.
+/*
+logs/*
+conf/*
+!app/
+
+# ignore everything in the the "public" directory, except:
+# src, wp-content, unless explicitly whitelisted at the end of this file
+/app/*
+!app/public/
+
+
+# ignore everything in the "wp-content" directory, except:
+# mu-plugins, plugins, and themes directories
+app/public/wp-content/*
+!app/public/wp-content/mu-plugins/
+!app/public/wp-content/plugins/
+!app/public/wp-content/themes/
+!app/public/wp-content/backup-db/
+
+# ignore all mu-plugins, plugins, and themes
+# unless explicitly whitelisted at the end of this file
+app/public/wp-content/mu-plugins/*
+app/public/wp-content/plugins/*
+app/public/wp-content/themes/*
+
+# ignore all files starting with . or ~
+.*
+~*
+
+*~
+.DS_Store
+.svn
+.cvs
+*.bak
+*.swp
+Thumbs.db
+
+# wordpress specific
+app/public/wp-config.php
+app/public/wp-content/uploads/
+app/public/wp-content/blogs.dir/
+app/public/wp-content/upgrade/*
+app/public/wp-content/backup-db/*
+app/public/wp-content/advanced-cache.php
+app/public/wp-content/wp-cache-config.php
+app/public/wp-content/cache/*
+app/public/wp-content/cache/supercache/*
+
+# wordpress default themes
+app/public/wp-content/themes/twentyfifteen/*
+app/public/wp-content/themes/sixteen/*
+app/public/wp-content/themes/twentyseventeenn/*
+
+# wordpress plugins
+app/public/src/parent-theme/walsh/plugins/*
+app/public/wp-content/plugins/*
+app/public/wp-content/vendor/*
+
+# wpengine specific
+.smushit-status
+.gitattributes
+app/public/_wpeprivate*
+app/public/wp-content/object-cache.php
+app/public/wp-content/mu-plugins/mu-plugin.php
+app/public/wp-content/mu-plugins/slt-force-strong-passwords.php
+app/public/wp-content/mu-plugins/stop-long-comments.php
+app/public/wp-content/mu-plugins/force-strong-passwords*
+app/public/wp-content/mu-plugins/wpengine-common*
+app/public/wp-content/mysql.sql
+
+# wp core (as of 4.9.5)
+app/public/db-config.php
+app/public/index.php
+app/public/license.txt
+app/public/readme.html
+app/public/wp-activate.php
+app/public/wp-app.php
+app/public/wp-atom.php
+app/public/wp-blog-header.php
+app/public/wp-comments-post.php
+app/public/wp-commentsrss2.php
+app/public/wp-config-sample.php
+app/public/wp-cron.php
+app/public/wp-feed.php
+app/public/wp-links-opml.php
+app/public/wp-load.php
+app/public/wp-login.php
+app/public/wp-mail.php
+app/public/wp-rdf.php
+app/public/wp-rss.php
+app/public/wp-rss2.php
+app/public/wp-pass.php
+app/public/wp-register.php
+app/public/wp-settings.php
+app/public/wp-signup.php
+app/public/wp-trackback.php
+app/public/xmlrpc.php
+app/public/wp-admin
+app/public/wp-includes
+app/public/wp-content/index.php
+app/public/wp-content/themes/twentyten
+app/public/wp-content/themes/twentyeleven
+app/public/wp-content/themes/twentytwelve
+app/public/wp-content/themes/twentythirteen
+app/public/wp-content/themes/twentyfourteen
+app/public/wp-content/themes/twentyfifteen
+app/public/wp-content/themes/twentysixteen
+app/public/wp-content/themes/twentyseventeen
+app/public/wp-content/themes/index.php
+app/public/wp-content/plugins/index.php
+app/public/wp-content/plugins/akismet*
+
+# ignore node dependency directories (used by gulp)
+app/public/node_modules/
+app/public/npm-debug.log
+app/public/package-lock.json
+app/public/composer.lock
+app/public/
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# large/disallowed file types
+# a CDN should be used for these
+*.hqx
+*.bin
+*.exe
+*.dll
+*.deb
+*.dmg
+*.iso
+*.img
+*.msi
+*.msp
+*.msm
+*.mid
+*.midi
+*.kar
+*.mp3
+*.ogg
+*.m4a
+*.ra
+*.3gpp
+*.3gp
+*.mp4
+*.mpeg
+*.mpg
+*.mov
+*.webm
+*.flv
+*.m4v
+*.mng
+*.asx
+*.asf
+*.wmv
+*.avi
+
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!.phpcs.xml.dist
+!README.md
+!LICENSE
+!app/public/CHANGELOG.md
+!app/public/composer.json
+!app/public/package.json
+!app/public/license.txt
+!app/public/gulpfile.js
+!app/public/.htaccess
+!app/public/.babelrc
+
+
+# track favicon files, if they exist
+!android-chrome-*.png
+!apple-touch-icon*.png
+!browserconfig.xml
+!favicon*.png
+!favicon*.ico
+!manifest.json
+!mstile-*.png
+!safari-pinned-tab.svg
+!site.webmanifest
+
+
+# track these development files
+!app/public/wp-content/
+
+
+# track these mu-plugins, plugins, and themes
+!app/public/wp-content/mu-plugins/wp-migrate-db-pro-compatibility.php
+!app/public/wp-content/themes/wpblueprint/
+!app/public/wp-content/themes/wpblueprint-child/
+!app/public/wp-content/uploads/*
+!app/public//wp-content/plugins/js_composer_salient/
+!app/public//wp-content/plugins/wordpress-seo/*
+!app/public//wp-content/plugins/wp-media-folder/*
+!app/public//wp-content/plugins/wp-migrate-db-pro/*
+!app/public//wp-content/plugins/wp-migrate-db-pro-media-files/*
